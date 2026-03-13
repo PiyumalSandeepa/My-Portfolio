@@ -2,12 +2,12 @@ import {
     FaPalette, FaServer, FaTools, FaDatabase, FaMobile,
     FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython,
     FaJava, FaGitAlt, FaGithub, FaFigma, FaDocker,
-    FaCss3, FaAws, FaJenkins
+    FaCss3, FaAws, FaJenkins, FaBug, FaVial, FaSearchPlus,
+    FaTachometerAlt
 } from "react-icons/fa";
 import {
-    SiTypescript, SiSpringboot, SiCplusplus, SiFlutter,
-    SiMysql, SiFirebase, SiMongodb, SiJunit5, SiSelenium,
-    SiSonarqube, SiApachejmeter, SiJira
+    SiTypescript, SiCplusplus, SiFlutter,
+    SiMysql, SiFirebase, SiMongodb, SiJira
 } from "react-icons/si";
 import SectionHeader from "./SectionHeader";
 import { useScrollReveal } from "../hooks/useScrollReveal";
@@ -33,15 +33,15 @@ const skillIcons = {
 
 const toolIcons = {
     "Git & GitHub": FaGitAlt,
-    Docker: FaDocker,
+    "Docker": FaDocker,
     "AWS EC2": FaAws,
-    Jenkins: FaJenkins,
-    Jira: SiJira,
-    Figma: FaFigma,
-    JUnit: SiJunit5,
-    Selenium: SiSelenium,
-    SonarQube: SiSonarqube,
-    JMeter: SiApachejmeter,
+    "Jenkins": FaJenkins,
+    "Jira": SiJira,
+    "Figma": FaFigma,
+    "JUnit": FaVial,
+    "Selenium": FaBug,
+    "SonarQube": FaSearchPlus,
+    "JMeter": FaTachometerAlt,
 };
 
 function SkillBar({ name, icon, percent }) {
@@ -89,35 +89,30 @@ export default function Skills() {
             <div className="max-w-[1200px] mx-auto">
                 <SectionHeader tag="skills" title="Skills &" highlight="Technologies" />
 
-                {/* Frontend */}
                 <SkillCategory icon={<FaPalette />} title="Frontend Development">
                     {skillsData.frontend.map((s) => (
                         <SkillBar key={s.name} {...s} />
                     ))}
                 </SkillCategory>
 
-                {/* Backend */}
                 <SkillCategory icon={<FaServer />} title="Backend Development">
                     {skillsData.backend.map((s) => (
                         <SkillBar key={s.name} {...s} />
                     ))}
                 </SkillCategory>
 
-                {/* Database */}
                 <SkillCategory icon={<FaDatabase />} title="Database Management">
                     {skillsData.database.map((s) => (
                         <SkillBar key={s.name} {...s} />
                     ))}
                 </SkillCategory>
 
-                {/* Mobile */}
                 <SkillCategory icon={<FaMobile />} title="Mobile Development">
                     {skillsData.mobile.map((s) => (
                         <SkillBar key={s.name} {...s} />
                     ))}
                 </SkillCategory>
 
-                {/* Tools */}
                 <SkillCategory icon={<FaTools />} title="Tools & DevOps">
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                         {skillsData.tools.map((tool) => {
