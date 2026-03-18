@@ -24,7 +24,6 @@ export const personalInfo = {
     yearsLearning: 3,
     projectCount: 6,
     certCount: 3,
-    coffeeCount: 1000,
     resumeUrl: "/resume.pdf",
    profileImage: "/profile.jpg",
     social: {
